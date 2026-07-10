@@ -36,12 +36,19 @@
             margin-bottom: 25px;
         }
 
-        /* Grid layout for cards */
+        /* Grid layout locked to exactly three columns on desktop screens */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
             margin-bottom: 20px;
+        }
+
+        /* Makes cards collapse gracefully into 1 column on small mobile screens */
+        @media (max-width: 768px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Flip card container */
@@ -85,9 +92,9 @@
             padding: 20px;
         }
 
-        /* Front face: Crimson background, white text */
+        /* Front face: Custom Crimson background (#990000), white text */
         .flip-card-front {
-            background-color: #DC143C; /* Crimson */
+            background-color: #990000; 
             color: #ffffff;
         }
 
@@ -268,9 +275,3 @@
                         <ul>
                             <li>Provides templates for legal drafting.</li>
                             <li>Includes sample complaints, contracts, and motions.</li>
-                            <li>Accompanied by explanatory legal text.</li>
-                            <li>Saves time for practicing attorneys.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
