@@ -5,53 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legal Secondary Sources</title>
     <style>
-        /* Global Styles */
+        /* Base page styling */
         body {
             background-color: #ffffff;
             color: #333333;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 40px 20px;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         /* Typography */
         h1 {
-            color: #002060; /* Navy Blue */
+            color: #000080; /* Navy Blue */
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 40px;
         }
 
         h2 {
-            color: #002060; /* Navy Blue */
+            color: #000080; /* Navy Blue */
             font-size: 1.8rem;
-            border-bottom: 2px solid #002060;
-            padding-bottom: 8px;
+            border-bottom: 2px solid #000080;
+            padding-bottom: 10px;
             margin-top: 40px;
-            margin-bottom: 24px;
+            margin-bottom: 25px;
         }
 
-        /* Grid Layout */
+        /* Grid layout for cards */
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 24px;
-            margin-bottom: 40px;
+            gap: 25px;
+            margin-bottom: 20px;
         }
 
-        /* The Flip Card Structure */
+        /* Flip card container */
         .flip-card {
             background-color: transparent;
-            height: 200px;
-            perspective: 1000px; 
+            height: 250px;
+            perspective: 1000px; /* Creates 3D effect */
             cursor: pointer;
         }
 
+        /* Inner container to manage the flip */
         .flip-card-inner {
             position: relative;
             width: 100%;
@@ -61,42 +62,65 @@
             transform-style: preserve-3d;
         }
 
-        .flip-card:hover .flip-card-inner {
+        /* Trigger the flip on hover and focus */
+        .flip-card:hover .flip-card-inner,
+        .flip-card:focus-within .flip-card-inner {
             transform: rotateY(180deg);
         }
 
-        /* Card Sides */
+        /* Shared face styles */
         .flip-card-front, .flip-card-back {
             position: absolute;
             width: 100%;
             height: 100%;
-            -webkit-backface-visibility: hidden;
+            -webkit-backface-visibility: hidden; /* Safari */
             backface-visibility: hidden;
+            border: 2px solid #000080; /* Thin Navy Blue Border */
+            border-radius: 8px;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            padding: 24px;
-            box-sizing: border-box;
-            background-color: #990000; /* Crimson */
-            color: #ffffff; /* White text */
+            padding: 20px;
         }
 
-        .flip-card-back {
-            transform: rotateY(180deg);
+        /* Front face: Crimson background, white text */
+        .flip-card-front {
+            background-color: #DC143C; /* Crimson */
+            color: #ffffff;
         }
 
-        h3 {
-            margin: 0 0 10px 0;
+        .flip-card-front h3 {
+            margin: 0;
             font-size: 1.4rem;
         }
 
-        p {
+        /* Back face: Light yellow background, black text */
+        .flip-card-back {
+            background-color: #FFFFE0; /* Light Yellow */
+            color: #000000;
+            transform: rotateY(180deg);
+            align-items: flex-start; /* Align bullet points to the left */
+            text-align: left;
+            justify-content: flex-start;
+            overflow-y: auto; /* Scrollbar if text overflows */
+        }
+
+        /* Bullet points styling on back */
+        .flip-card-back ul {
             margin: 0;
-            font-size: 1rem;
+            padding-left: 20px;
+            font-size: 0.95rem;
             line-height: 1.4;
+        }
+
+        .flip-card-back li {
+            margin-bottom: 8px;
+        }
+        
+        .flip-card-back li:last-child {
+            margin-bottom: 0;
         }
     </style>
 </head>
@@ -105,137 +129,148 @@
     <div class="container">
         <h1>Legal Secondary Sources</h1>
 
-        <!-- SECTION 1 -->
-        <h2>The Fundamentals</h2>
+        <!-- SECTION 1: GETTING STARTED -->
+        <h2>Getting Started</h2>
         <div class="card-grid">
             
             <!-- Card 1 -->
-             <div class="flip-card">
+            <div class="flip-card" tabindex="0">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <h3>Legal Dictionaries</h3>
                     </div>
                     <div class="flip-card-back">
-                        <p>Definitions of legal terms and phrases.</p>
+                        <ul>
+                            <li>Defines legal words, terms, and maxims.</li>
+                            <li>Provides spelling and pronunciation guides.</li>
+                            <li>Cites to relevant cases and statutes.</li>
+                            <li>Example: Black's Law Dictionary.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
+
             <!-- Card 2 -->
-         <div class="flip-card">
+            <div class="flip-card" tabindex="0">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <h3>Legal Encyclopedias</h3>
                     </div>
                     <div class="flip-card-back">
-                        <p>Broad overviews of legal topics arranged alphabetically, like Am Jur or CJS.</p>
+                        <ul>
+                            <li>Provides broad, brief overviews of legal topics.</li>
+                            <li>Organized alphabetically by subject matter.</li>
+                            <li>Great for introducing unfamiliar areas of law.</li>
+                            <li>Examples: AmJur and C.J.S.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
             <!-- Card 3 -->
-           <div class="flip-card">
+            <div class="flip-card" tabindex="0">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <h3>Treatises</h3>
                     </div>
                     <div class="flip-card-back">
-                        <p>In-depth, scholarly books focusing exclusively on a single area of law.</p>
+                        <ul>
+                            <li>In-depth scholarly books on a specific legal area.</li>
+                            <li>Written by legal experts or professors.</li>
+                            <li>Analyzes case law, statutes, and trends.</li>
+                            <li>Highly persuasive in legal arguments.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <!-- SECTION 2 -->
+        <!-- SECTION 2: SPECIALIZED SECONDARY SOURCES -->
         <h2>Specialized Secondary Sources</h2>
         <div class="card-grid">
 
             <!-- Card 4 -->
-            <div class="flip-card">
+            <div class="flip-card" tabindex="0">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <h3>Law Journals</h3>
+                        <h3>Restatements of the Law</h3>
                     </div>
                     <div class="flip-card-back">
-                        <p>Scholarly articles analyzing niche legal issues, published by law schools.</p>
+                        <ul>
+                            <li>Compiled by the American Law Institute.</li>
+                            <li>Codifies and organizes common law principles.</li>
+                            <li>Includes helpful commentary and illustrations.</li>
+                            <li>Frequently cited by state courts.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
             <!-- Card 5 -->
-            <div class="flip-card">
+            <div class="flip-card" tabindex="0">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <h3>ALR Annotations</h3>
+                        <h3>Legal Periodicals & Law Reviews</h3>
                     </div>
                     <div class="flip-card-back">
-                        <p>Articles that organize and analyze cases on specific legal points across jurisdictions.</p>
+                        <ul>
+                            <li>Articles published by law schools or bar groups.</li>
+                            <li>Focuses on niche, novel, or developing law.</li>
+                            <li>Contains heavy footnotes to primary authority.</li>
+                            <li>Excellent for finding critical policy arguments.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
             <!-- Card 6 -->
-               <div class="flip-card">
+            <div class="flip-card" tabindex="0">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <h3>Restatements</h3>
+                        <h3>American Law Reports (ALR)</h3>
                     </div>
                     <div class="flip-card-back">
-                        <p>Highly authoritative summaries of common law principles compiled by experts.</p>
+                        <ul>
+                            <li>Contains annotations analyzing specific cases.</li>
+                            <li>Organized by discrete, hyper-specific legal issues.</li>
+                            <li>Compares how different jurisdictions rule on an issue.</li>
+                            <li>Saves time compiling nationwide case law.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
             <!-- Card 7 -->
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <h3>Form Books</h3>
-                    </div>
-                    <div class="flip-card-back">
-                        <p>Collections of sample legal documents, pleadings, and transactional templates.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 8 -->
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <h3>Practice Guides</h3>
-                    </div>
-                    <div class="flip-card-back">
-                        <p>Jurisdiction-specific roadmaps created for practitioners explaining how to litigate or handle legal tasks.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 9 -->
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <h3>CLE Materials</h3>
-                    </div>
-                    <div class="flip-card-back">
-                        <p>Handouts and outlines from Continuing Legal Education courses for practicing attorneys.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 10 -->
-              <div class="flip-card">
+            <div class="flip-card" tabindex="0">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <h3>Looseleaf Services</h3>
                     </div>
                     <div class="flip-card-back">
-                        <p>Frequently updated binders tracking volatile fields like tax or environmental law.</p>
+                        <ul>
+                            <li>Binder-format publications updated frequently.</li>
+                            <li>Common in rapidly changing areas like tax law.</li>
+                            <li>Combines primary sources, analysis, and news.</li>
+                            <li>Provides the most current administrative rulings.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            
-        </div>
-    </div>
 
-</body>
-</html>
+            <!-- Card 8 -->
+            <div class="flip-card" tabindex="0">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>Form Books</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <ul>
+                            <li>Provides templates for legal drafting.</li>
+                            <li>Includes sample complaints, contracts, and motions.</li>
+                            <li>Accompanied by explanatory legal text.</li>
+                            <li>Saves time for practicing attorneys.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
